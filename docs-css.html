@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cơ bản - CodeType Docs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="index.html#practice" class="nav-link" onclick="closeMenu()">Luyện tập</a>
+                <a href="index.html#lessons" class="nav-link" onclick="closeMenu()">Bài học</a>
+                <a href="docs-getting-started.html" class="nav-link active" onclick="closeMenu()">Docs</a>
+                <a href="index.html#about" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Docs Content -->
+        <section class="docs-section">
+            <h2 class="section-title">Tài liệu Hướng dẫn</h2>
+            <p class="section-subtitle">Hướng dẫn chi tiết về cách sử dụng và các khái niệm lập trình</p>
+
+            <div class="docs-tabs">
+                <a href="docs-getting-started.html" class="docs-tab">Bắt đầu</a>
+                <a href="docs-html.html" class="docs-tab">HTML</a>
+                <a href="docs-css.html" class="docs-tab active">CSS</a>
+                <a href="docs-javascript.html" class="docs-tab">JavaScript</a>
+                <a href="docs-shortcuts.html" class="docs-tab">Phím tắt</a>
+            </div>
+
+            <div class="docs-content-container">
+                <div class="docs-content active">
+                    <h3>🎨 CSS - Cascading Style Sheets</h3>
+
+                    <div class="docs-block">
+                        <h4>CSS là gì?</h4>
+                        <p>CSS (Cascading Style Sheets) là ngôn ngữ để trang trí và định dạng giao diện web. CSS giúp website trở nên đẹp mắt và chuyên nghiệp.</p>
+                        <p>HTML tạo cấu trúc, CSS tạo giao diện đẹp!</p>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Cú pháp CSS</h4>
+                        <pre><code>selector {
+    property: value;
+    property: value;
+}</code></pre>
+                        <p><strong>Ví dụ:</strong></p>
+                        <pre><code>h1 {
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+}</code></pre>
+                        <ul>
+                            <li><code>h1</code>: Selector (chọn thẻ h1)</li>
+                            <li><code>color</code>: Property (thuộc tính)</li>
+                            <li><code>blue</code>: Value (giá trị)</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Các loại Selector</h4>
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Selector</th>
+                                    <th>Ví dụ</th>
+                                    <th>Chọn</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Element</td>
+                                    <td><code>p { }</code></td>
+                                    <td>Tất cả thẻ &lt;p&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Class</td>
+                                    <td><code>.button { }</code></td>
+                                    <td>Tất cả class="button"</td>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td><code>#header { }</code></td>
+                                    <td>Element có id="header"</td>
+                                </tr>
+                                <tr>
+                                    <td>Universal</td>
+                                    <td><code>* { }</code></td>
+                                    <td>Tất cả elements</td>
+                                </tr>
+                                <tr>
+                                    <td>Descendant</td>
+                                    <td><code>div p { }</code></td>
+                                    <td>Thẻ &lt;p&gt; trong &lt;div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Child</td>
+                                    <td><code>div > p { }</code></td>
+                                    <td>&lt;p&gt; là con trực tiếp của &lt;div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Hover</td>
+                                    <td><code>a:hover { }</code></td>
+                                    <td>Khi hover chuột lên &lt;a&gt;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Box Model</h4>
+                        <p>Mọi element đều có 4 phần:</p>
+                        <ul>
+                            <li><strong>Content:</strong> Nội dung thực sự</li>
+                            <li><strong>Padding:</strong> Khoảng cách bên trong (giữa content và border)</li>
+                            <li><strong>Border:</strong> Viền</li>
+                            <li><strong>Margin:</strong> Khoảng cách bên ngoài (giữa element với các element khác)</li>
+                        </ul>
+                        <pre><code>.box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;        /* Bên trong */
+    border: 2px solid black;
+    margin: 10px;         /* Bên ngoài */
+}</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Thuộc tính CSS quan trọng</h4>
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Thuộc tính</th>
+                                    <th>Mô tả</th>
+                                    <th>Ví dụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>color</code></td>
+                                    <td>Màu chữ</td>
+                                    <td><code>color: red;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>background-color</code></td>
+                                    <td>Màu nền</td>
+                                    <td><code>background-color: #fff;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>font-size</code></td>
+                                    <td>Cỡ chữ</td>
+                                    <td><code>font-size: 16px;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>font-weight</code></td>
+                                    <td>Độ đậm chữ</td>
+                                    <td><code>font-weight: bold;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>text-align</code></td>
+                                    <td>Căn chỉnh text</td>
+                                    <td><code>text-align: center;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>display</code></td>
+                                    <td>Cách hiển thị</td>
+                                    <td><code>display: flex;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>margin</code></td>
+                                    <td>Khoảng cách ngoài</td>
+                                    <td><code>margin: 10px;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>padding</code></td>
+                                    <td>Khoảng cách trong</td>
+                                    <td><code>padding: 20px;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Flexbox - Layout hiện đại</h4>
+                        <pre><code>.container {
+    display: flex;
+    justify-content: center;   /* Căn giữa ngang */
+    align-items: center;       /* Căn giữa dọc */
+    gap: 20px;                 /* Khoảng cách giữa items */
+}</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Colors - Màu sắc</h4>
+                        <pre><code>/* Tên màu */
+color: red;
+color: blue;
+
+/* Hex */
+color: #ff0000;
+color: #00f;
+
+/* RGB */
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5);  /* Alpha = độ trong suốt */
+
+/* HSL */
+color: hsl(0, 100%, 50%);</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

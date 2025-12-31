@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phím tắt & Tính năng - CodeType Docs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="index.html#practice" class="nav-link" onclick="closeMenu()">Luyện tập</a>
+                <a href="index.html#lessons" class="nav-link" onclick="closeMenu()">Bài học</a>
+                <a href="docs-getting-started.html" class="nav-link active" onclick="closeMenu()">Docs</a>
+                <a href="index.html#about" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Docs Content -->
+        <section class="docs-section">
+            <h2 class="section-title">Tài liệu Hướng dẫn</h2>
+            <p class="section-subtitle">Hướng dẫn chi tiết về cách sử dụng và các khái niệm lập trình</p>
+
+            <div class="docs-tabs">
+                <a href="docs-getting-started.html" class="docs-tab">Bắt đầu</a>
+                <a href="docs-html.html" class="docs-tab">HTML</a>
+                <a href="docs-css.html" class="docs-tab">CSS</a>
+                <a href="docs-javascript.html" class="docs-tab">JavaScript</a>
+                <a href="docs-shortcuts.html" class="docs-tab active">Phím tắt</a>
+            </div>
+
+            <div class="docs-content-container">
+                <div class="docs-content active">
+                    <h3>⌨️ Phím tắt & Tính năng</h3>
+
+                    <div class="docs-block">
+                        <h4>Phím tắt chính</h4>
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Phím</th>
+                                    <th>Chức năng</th>
+                                    <th>Mô tả chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Tab</code></td>
+                                    <td>Thụt lề</td>
+                                    <td>Thêm 4 spaces vào đầu dòng hoặc vị trí cursor</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Shift + Tab</code></td>
+                                    <td>Giảm lề</td>
+                                    <td>Xóa 4 spaces ở đầu dòng hiện tại</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Enter</code></td>
+                                    <td>Xuống dòng</td>
+                                    <td>Tự động thụt lề theo ngữ cảnh (sau {, :, function...)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Backspace</code></td>
+                                    <td>Xóa thông minh</td>
+                                    <td>Xóa 4 spaces cùng lúc nếu ở đầu dòng</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Ctrl + Enter</code></td>
+                                    <td>Reset bài tập</td>
+                                    <td>Làm lại từ đầu, xóa toàn bộ input</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Esc</code></td>
+                                    <td>Thoát</td>
+                                    <td>Đóng menu mobile hoặc unfocus input</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Auto-Indent thông minh</h4>
+                        <p>Khi nhấn <code>Enter</code>, indent sẽ tự động tăng sau các ký tự:</p>
+
+                        <h5>JavaScript:</h5>
+                        <ul>
+                            <li>Sau <code>{</code>, <code>(</code>, <code>[</code></li>
+                            <li>Sau keywords: <code>function</code>, <code>if</code>, <code>for</code>, <code>while</code>, <code>class</code></li>
+                            <li>Nếu ở giữa <code>{}</code> sẽ tạo 2 dòng, cursor ở giữa</li>
+                        </ul>
+
+                        <h5>Python:</h5>
+                        <ul>
+                            <li>Sau <code>:</code> (def, class, if, for, while...)</li>
+                            <li>Tự động giữ indent level đúng</li>
+                        </ul>
+
+                        <h5>HTML:</h5>
+                        <ul>
+                            <li>Sau mở thẻ <code>&lt;div&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;section&gt;</code>...</li>
+                        </ul>
+
+                        <h5>CSS:</h5>
+                        <ul>
+                            <li>Sau <code>{</code> trong selector</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Auto-Close Brackets</h4>
+                        <p>Khi gõ ký tự mở, ký tự đóng sẽ tự động thêm:</p>
+                        <table class="docs-table">
+                            <tr>
+                                <td><code>{</code></td>
+                                <td>→</td>
+                                <td><code>{}</code></td>
+                                <td>Cursor ở giữa</td>
+                            </tr>
+                            <tr>
+                                <td><code>(</code></td>
+                                <td>→</td>
+                                <td><code>()</code></td>
+                                <td>Cursor ở giữa</td>
+                            </tr>
+                            <tr>
+                                <td><code>[</code></td>
+                                <td>→</td>
+                                <td><code>[]</code></td>
+                                <td>Cursor ở giữa</td>
+                            </tr>
+                            <tr>
+                                <td><code>"</code></td>
+                                <td>→</td>
+                                <td><code>""</code></td>
+                                <td>Cursor ở giữa</td>
+                            </tr>
+                            <tr>
+                                <td><code>'</code></td>
+                                <td>→</td>
+                                <td><code>''</code></td>
+                                <td>Cursor ở giữa</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>🔊 Hiệu ứng âm thanh</h4>
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Hành động</th>
+                                    <th>Âm thanh</th>
+                                    <th>Ý nghĩa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gõ đúng ký tự</td>
+                                    <td>Tiếng "ting" cao (1200Hz)</td>
+                                    <td>Khích lệ bạn gõ đúng</td>
+                                </tr>
+                                <tr>
+                                    <td>Gõ sai ký tự</td>
+                                    <td>Tiếng "buzz" thấp (200Hz)</td>
+                                    <td>Cảnh báo gõ sai</td>
+                                </tr>
+                                <tr>
+                                    <td>Nhấn Enter/Space</td>
+                                    <td>Tiếng "blip" (600Hz)</td>
+                                    <td>Feedback cho phím đặc biệt</td>
+                                </tr>
+                                <tr>
+                                    <td>Nhấn Backspace</td>
+                                    <td>Tiếng "pop" (400Hz)</td>
+                                    <td>Xác nhận xóa ký tự</td>
+                                </tr>
+                                <tr>
+                                    <td>Hoàn thành bài</td>
+                                    <td>Giai điệu C5-E5-G5-C6</td>
+                                    <td>Chúc mừng hoàn thành!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>Lưu ý:</strong> Click nút 🔊 ở header để bật/tắt âm thanh bất cứ lúc nào.</p>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>🎯 Tính năng nâng cao</h4>
+
+                        <h5>1. Wrap Selection</h5>
+                        <p>Bôi đen text và gõ <code>{</code>, <code>(</code>, <code>"</code>... để bao quanh text:</p>
+                        <pre><code>// Bôi đen "Hello"
+Hello
+
+// Nhấn "
+"Hello"</code></pre>
+
+                        <h5>2. Skip Closing Character</h5>
+                        <p>Khi gõ <code>)</code>, <code>}</code>, <code>]</code> và cursor đang ở trước ký tự đó, sẽ skip qua:</p>
+                        <pre><code>function test(|)   // Cursor ở đây
+// Nhấn ) → cursor nhảy qua
+function test()|</code></pre>
+
+                        <h5>3. Smart Backspace</h5>
+                        <p>Backspace giữa <code>{}</code>, <code>()</code>, <code>[]</code> sẽ xóa cả cặp:</p>
+                        <pre><code>const obj = {|}   // Backspace → const obj = |</code></pre>
+
+                        <h5>4. Multi-line Indent</h5>
+                        <p>Ở đầu dòng chỉ có spaces, Backspace xóa 4 spaces cùng lúc:</p>
+                        <pre><code>        |cursor   // Backspace → xóa 4 spaces
+    |cursor       // Chỉ còn 4 spaces</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>🎨 Theme & UI</h4>
+                        <ul>
+                            <li><strong>Dark Mode:</strong> Mặc định, dễ nhìn ban đêm</li>
+                            <li><strong>Light Mode:</strong> Click icon ☀️/🌙 để chuyển</li>
+                            <li><strong>Auto-detect:</strong> Tự động theo system preference</li>
+                            <li><strong>Lưu preference:</strong> Theme được lưu vào localStorage</li>
+                            <li><strong>Syntax colors:</strong> VS Code Dark+/Light+ theme</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>📱 Mobile Features</h4>
+                        <ul>
+                            <li><strong>Hamburger Menu:</strong> Menu slide từ bên phải</li>
+                            <li><strong>Touch Targets:</strong> Nút tối thiểu 44x44px</li>
+                            <li><strong>Responsive Layout:</strong> Tối ưu cho mọi màn hình</li>
+                            <li><strong>No Hover on Touch:</strong> Tắt hover effect trên mobile</li>
+                            <li><strong>Active States:</strong> Scale animation khi tap</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

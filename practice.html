@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập - CodeType</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="practice.html" class="nav-link active" onclick="closeMenu()">Luyện tập</a>
+                <a href="lessons.html" class="nav-link" onclick="closeMenu()">Bài học</a>
+                <a href="docs.html" class="nav-link" onclick="closeMenu()">Docs</a>
+                <a href="about.html" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Practice Section -->
+        <section id="practice" class="practice-section">
+            <h2 class="section-title">Luyện tập gõ code</h2>
+            <p class="section-subtitle">Chọn ngôn ngữ và bắt đầu luyện tập</p>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="javascript">JavaScript</button>
+                <button class="lang-btn" data-lang="python">Python</button>
+                <button class="lang-btn" data-lang="html">HTML</button>
+                <button class="lang-btn" data-lang="css">CSS</button>
+            </div>
+
+            <!-- Code Editor -->
+            <div class="editor-container">
+                <div class="editor-header">
+                    <span class="editor-title">Gõ theo đoạn code bên dưới:</span>
+                    <div class="editor-stats">
+                        <span class="stat">WPM: <span id="wpm">0</span></span>
+                        <span class="stat">Độ chính xác: <span id="accuracy">100</span>%</span>
+                        <span class="stat">Thời gian: <span id="timer">0:00</span></span>
+                    </div>
+                </div>
+
+                <!-- Target Code -->
+                <div class="code-display">
+                    <div class="line-numbers" id="line-numbers"></div>
+                    <div class="code-text" id="target-code"></div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-container">
+                    <div class="input-header">
+                        <span>Nhập code của bạn:</span>
+                        <div class="input-header-actions">
+                            <button class="btn-run" onclick="runCode()" title="Chạy code (Ctrl+Enter)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                Chạy Code
+                            </button>
+                            <button class="btn-reset" onclick="resetPractice()">Làm lại</button>
+                        </div>
+                    </div>
+                    <textarea
+                        id="code-input"
+                        class="code-input"
+                        placeholder="Bắt đầu gõ code ở đây..."
+                        spellcheck="false"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                    ></textarea>
+                </div>
+
+                <!-- Output Panel -->
+                <div class="output-container" id="output-container" style="display: none;">
+                    <div class="output-header">
+                        <span>Kết quả:</span>
+                        <button class="btn-clear-output" onclick="clearOutput()" title="Xóa output">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="output-content" id="output-content"></div>
+                    <iframe id="preview-frame" class="preview-frame" style="display: none;"></iframe>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <!-- Results -->
+                <div class="results" id="results" style="display: none;">
+                    <h3>Kết quả</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-value" id="final-wpm">0</span>
+                            <span class="result-label">WPM</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value" id="final-accuracy">0%</span>
+                            <span class="result-label">Độ chính xác</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value" id="final-time">0:00</span>
+                            <span class="result-label">Thời gian</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value" id="final-errors">0</span>
+                            <span class="result-label">Lỗi</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary" onclick="nextChallenge()">Thử thách tiếp theo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

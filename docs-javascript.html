@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Cơ bản - CodeType Docs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="index.html#practice" class="nav-link" onclick="closeMenu()">Luyện tập</a>
+                <a href="index.html#lessons" class="nav-link" onclick="closeMenu()">Bài học</a>
+                <a href="docs-getting-started.html" class="nav-link active" onclick="closeMenu()">Docs</a>
+                <a href="index.html#about" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Docs Content -->
+        <section class="docs-section">
+            <h2 class="section-title">Tài liệu Hướng dẫn</h2>
+            <p class="section-subtitle">Hướng dẫn chi tiết về cách sử dụng và các khái niệm lập trình</p>
+
+            <div class="docs-tabs">
+                <a href="docs-getting-started.html" class="docs-tab">Bắt đầu</a>
+                <a href="docs-html.html" class="docs-tab">HTML</a>
+                <a href="docs-css.html" class="docs-tab">CSS</a>
+                <a href="docs-javascript.html" class="docs-tab active">JavaScript</a>
+                <a href="docs-shortcuts.html" class="docs-tab">Phím tắt</a>
+            </div>
+
+            <div class="docs-content-container">
+                <div class="docs-content active">
+                    <h3>⚡ JavaScript - Ngôn ngữ Lập trình Web</h3>
+
+                    <div class="docs-block">
+                        <h4>JavaScript là gì?</h4>
+                        <p>JavaScript là ngôn ngữ lập trình để tạo tính tương tác cho website. Mọi website hiện đại đều sử dụng JavaScript.</p>
+                        <p>JavaScript có thể:</p>
+                        <ul>
+                            <li>Thay đổi nội dung HTML</li>
+                            <li>Thay đổi styles CSS</li>
+                            <li>Xử lý sự kiện (click, hover, input...)</li>
+                            <li>Gửi/nhận dữ liệu từ server</li>
+                            <li>Tạo animations và effects</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>1. Biến (Variables)</h4>
+                        <pre><code>// Khai báo biến
+let name = "Alice";      // Có thể thay đổi
+const age = 25;          // Không thể thay đổi (constant)
+var city = "Hanoi";      // Cách cũ (không nên dùng)
+
+// Kiểu dữ liệu
+let number = 42;         // Number (số)
+let text = "Hello";      // String (chuỗi)
+let isTrue = true;       // Boolean (true/false)
+let nothing = null;      // Null (rỗng)
+let notDefined;          // Undefined (chưa gán giá trị)</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>2. Hàm (Functions)</h4>
+                        <pre><code>// Function declaration
+function greet(name) {
+    return "Hello, " + name;
+}
+
+// Arrow function (ES6)
+const greet = (name) => {
+    return `Hello, ${name}`;  // Template literal
+};
+
+// Arrow function ngắn gọn
+const add = (a, b) => a + b;
+
+// Gọi function
+let message = greet("Alice");
+console.log(message);  // "Hello, Alice"
+console.log(add(5, 3));  // 8</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>3. Điều kiện (If/Else)</h4>
+                        <pre><code>let age = 18;
+
+if (age >= 18) {
+    console.log("Đủ tuổi");
+} else if (age >= 13) {
+    console.log("Thiếu niên");
+} else {
+    console.log("Trẻ em");
+}
+
+// Ternary operator (ngắn gọn)
+let status = age >= 18 ? "Adult" : "Minor";</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>4. Vòng lặp (Loops)</h4>
+                        <pre><code>// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // 0, 1, 2, 3, 4
+}
+
+// While loop
+let count = 0;
+while (count < 3) {
+    console.log(count);
+    count++;
+}
+
+// Array forEach
+const fruits = ["apple", "banana", "orange"];
+fruits.forEach(fruit => {
+    console.log(fruit);
+});
+
+// Array map (tạo array mới)
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled);  // [2, 4, 6, 8, 10]</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>5. DOM Manipulation</h4>
+                        <pre><code>// Lấy element
+const element = document.getElementById('myId');
+const elements = document.querySelectorAll('.myClass');
+
+// Thay đổi nội dung
+element.textContent = "New text";
+element.innerHTML = "&lt;strong&gt;Bold text&lt;/strong&gt;";
+
+// Thay đổi style
+element.style.color = "red";
+element.style.fontSize = "20px";
+
+// Thêm/xóa class
+element.classList.add('active');
+element.classList.remove('hidden');
+element.classList.toggle('open');
+
+// Event listener
+element.addEventListener('click', () => {
+    console.log('Clicked!');
+});
+
+// Tạo element mới
+const newDiv = document.createElement('div');
+newDiv.textContent = 'New element';
+document.body.appendChild(newDiv);</code></pre>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>6. Objects & Arrays</h4>
+                        <pre><code>// Object
+const person = {
+    name: "Alice",
+    age: 25,
+    greet: function() {
+        return `Hello, I'm ${this.name}`;
+    }
+};
+
+console.log(person.name);     // "Alice"
+console.log(person.greet());  // "Hello, I'm Alice"
+
+// Array
+const colors = ["red", "green", "blue"];
+console.log(colors[0]);       // "red"
+console.log(colors.length);   // 3
+
+// Array methods
+colors.push("yellow");        // Thêm vào cuối
+colors.pop();                 // Xóa cuối
+colors.shift();               // Xóa đầu
+colors.unshift("purple");     // Thêm vào đầu</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

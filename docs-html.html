@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cơ bản - CodeType Docs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="index.html#practice" class="nav-link" onclick="closeMenu()">Luyện tập</a>
+                <a href="index.html#lessons" class="nav-link" onclick="closeMenu()">Bài học</a>
+                <a href="docs-getting-started.html" class="nav-link active" onclick="closeMenu()">Docs</a>
+                <a href="index.html#about" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Docs Content -->
+        <section class="docs-section">
+            <h2 class="section-title">Tài liệu Hướng dẫn</h2>
+            <p class="section-subtitle">Hướng dẫn chi tiết về cách sử dụng và các khái niệm lập trình</p>
+
+            <div class="docs-tabs">
+                <a href="docs-getting-started.html" class="docs-tab">Bắt đầu</a>
+                <a href="docs-html.html" class="docs-tab active">HTML</a>
+                <a href="docs-css.html" class="docs-tab">CSS</a>
+                <a href="docs-javascript.html" class="docs-tab">JavaScript</a>
+                <a href="docs-shortcuts.html" class="docs-tab">Phím tắt</a>
+            </div>
+
+            <div class="docs-content-container">
+                <div class="docs-content active">
+                    <h3>📄 HTML - HyperText Markup Language</h3>
+
+                    <div class="docs-block">
+                        <h4>HTML là gì?</h4>
+                        <p>HTML (HyperText Markup Language) là ngôn ngữ đánh dấu để tạo cấu trúc trang web. Mỗi trang web trên Internet đều được viết bằng HTML.</p>
+                        <p>HTML sử dụng các <strong>thẻ (tags)</strong> để định nghĩa các phần tử khác nhau như tiêu đề, đoạn văn, hình ảnh, liên kết...</p>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Cấu trúc HTML cơ bản</h4>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Tiêu đề trang&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+    &lt;p&gt;Đây là đoạn văn bản.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        <ul>
+                            <li><code>&lt;!DOCTYPE html&gt;</code>: Khai báo đây là HTML5</li>
+                            <li><code>&lt;html&gt;</code>: Thẻ gốc của trang</li>
+                            <li><code>&lt;head&gt;</code>: Chứa metadata (không hiển thị)</li>
+                            <li><code>&lt;body&gt;</code>: Nội dung hiển thị trên trang</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Các thẻ HTML thường dùng</h4>
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Thẻ</th>
+                                    <th>Mô tả</th>
+                                    <th>Ví dụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;h1&gt; - &lt;h6&gt;</code></td>
+                                    <td>Tiêu đề (h1 lớn nhất, h6 nhỏ nhất)</td>
+                                    <td><code>&lt;h1&gt;Tiêu đề chính&lt;/h1&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;p&gt;</code></td>
+                                    <td>Đoạn văn bản</td>
+                                    <td><code>&lt;p&gt;Văn bản&lt;/p&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;a&gt;</code></td>
+                                    <td>Liên kết</td>
+                                    <td><code>&lt;a href="url"&gt;Link&lt;/a&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;img&gt;</code></td>
+                                    <td>Hình ảnh</td>
+                                    <td><code>&lt;img src="image.jpg"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;div&gt;</code></td>
+                                    <td>Container (khối)</td>
+                                    <td><code>&lt;div&gt;Nội dung&lt;/div&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;span&gt;</code></td>
+                                    <td>Container (inline)</td>
+                                    <td><code>&lt;span&gt;Text&lt;/span&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;ul&gt;, &lt;li&gt;</code></td>
+                                    <td>Danh sách không thứ tự</td>
+                                    <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;button&gt;</code></td>
+                                    <td>Nút bấm</td>
+                                    <td><code>&lt;button&gt;Click me&lt;/button&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;input&gt;</code></td>
+                                    <td>Ô nhập liệu</td>
+                                    <td><code>&lt;input type="text"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;form&gt;</code></td>
+                                    <td>Form nhập liệu</td>
+                                    <td><code>&lt;form&gt;...&lt;/form&gt;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Thuộc tính (Attributes)</h4>
+                        <p>Các thẻ HTML có thể có thuộc tính để cung cấp thông tin thêm:</p>
+                        <pre><code>&lt;a href="https://example.com" target="_blank"&gt;Mở tab mới&lt;/a&gt;
+&lt;img src="photo.jpg" alt="Mô tả ảnh" width="300"&gt;
+&lt;div class="container" id="main"&gt;Nội dung&lt;/div&gt;</code></pre>
+                        <ul>
+                            <li><code>href</code>: URL của liên kết</li>
+                            <li><code>src</code>: Đường dẫn file (ảnh, script...)</li>
+                            <li><code>class</code>: Tên class cho CSS</li>
+                            <li><code>id</code>: ID duy nhất của element</li>
+                            <li><code>style</code>: CSS inline</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>Ví dụ thực tế</h4>
+                        <p>Tạo một card đơn giản:</p>
+                        <pre><code>&lt;div class="card"&gt;
+    &lt;img src="avatar.jpg" alt="Avatar"&gt;
+    &lt;h3&gt;John Doe&lt;/h3&gt;
+    &lt;p&gt;Web Developer&lt;/p&gt;
+    &lt;button&gt;Contact&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

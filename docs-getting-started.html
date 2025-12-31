@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bắt đầu - CodeType Docs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="index.html#practice" class="nav-link" onclick="closeMenu()">Luyện tập</a>
+                <a href="index.html#lessons" class="nav-link" onclick="closeMenu()">Bài học</a>
+                <a href="docs-getting-started.html" class="nav-link active" onclick="closeMenu()">Docs</a>
+                <a href="index.html#about" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Docs Navigation -->
+        <section class="docs-section">
+            <h2 class="section-title">Tài liệu Hướng dẫn</h2>
+            <p class="section-subtitle">Hướng dẫn chi tiết về cách sử dụng và các khái niệm lập trình</p>
+
+            <div class="docs-tabs">
+                <a href="docs-getting-started.html" class="docs-tab active">Bắt đầu</a>
+                <a href="docs-html.html" class="docs-tab">HTML</a>
+                <a href="docs-css.html" class="docs-tab">CSS</a>
+                <a href="docs-javascript.html" class="docs-tab">JavaScript</a>
+                <a href="docs-shortcuts.html" class="docs-tab">Phím tắt</a>
+            </div>
+
+            <div class="docs-content-container">
+                <div class="docs-content active">
+                    <h3>🚀 Bắt đầu với CodeType</h3>
+
+                    <div class="docs-block">
+                        <h4>Cách sử dụng</h4>
+                        <ol>
+                            <li><strong>Chọn ngôn ngữ:</strong> Click vào JavaScript, Python, HTML hoặc CSS</li>
+                            <li><strong>Gõ theo code:</strong> Nhập chính xác đoạn code hiển thị</li>
+                            <li><strong>Theo dõi tiến độ:</strong> Xem WPM, độ chính xác và thời gian</li>
+                            <li><strong>Hoàn thành:</strong> Gõ đúng toàn bộ để xem kết quả</li>
+                        </ol>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>⌨️ Phím tắt cơ bản</h4>
+                        <table class="docs-table">
+                            <tr>
+                                <td><code>Tab</code></td>
+                                <td>Thụt lề 4 spaces</td>
+                            </tr>
+                            <tr>
+                                <td><code>Shift + Tab</code></td>
+                                <td>Giảm lề 4 spaces</td>
+                            </tr>
+                            <tr>
+                                <td><code>Enter</code></td>
+                                <td>Xuống dòng với auto-indent</td>
+                            </tr>
+                            <tr>
+                                <td><code>Ctrl + Enter</code></td>
+                                <td>Reset bài tập</td>
+                            </tr>
+                            <tr>
+                                <td><code>Esc</code></td>
+                                <td>Đóng menu</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>💡 Mẹo học tập hiệu quả</h4>
+                        <ul>
+                            <li>Bắt đầu với code đơn giản, từ từ nâng cao</li>
+                            <li>Tập trung vào độ chính xác trước, sau đó đến tốc độ</li>
+                            <li>Luyện tập đều đặn 15-30 phút mỗi ngày</li>
+                            <li>Quan sát cú pháp và cấu trúc code kỹ càng</li>
+                            <li>Bật âm thanh để có feedback ngay lập tức</li>
+                            <li>Không nhìn bàn phím khi gõ để rèn muscle memory</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>📊 Hiểu về các chỉ số</h4>
+                        <ul>
+                            <li><strong>WPM (Words Per Minute):</strong> Tốc độ gõ - số từ trên phút (1 từ = 5 ký tự)</li>
+                            <li><strong>Độ chính xác:</strong> Phần trăm ký tự gõ đúng / tổng số ký tự đã gõ</li>
+                            <li><strong>Thời gian:</strong> Tổng thời gian hoàn thành bài tập</li>
+                            <li><strong>Lỗi:</strong> Số ký tự gõ sai</li>
+                        </ul>
+                    </div>
+
+                    <div class="docs-block">
+                        <h4>🎯 Mục tiêu WPM</h4>
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Trình độ</th>
+                                    <th>WPM</th>
+                                    <th>Độ chính xác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mới bắt đầu</td>
+                                    <td>10-20 WPM</td>
+                                    <td>85%+</td>
+                                </tr>
+                                <tr>
+                                    <td>Trung bình</td>
+                                    <td>20-35 WPM</td>
+                                    <td>90%+</td>
+                                </tr>
+                                <tr>
+                                    <td>Khá</td>
+                                    <td>35-50 WPM</td>
+                                    <td>95%+</td>
+                                </tr>
+                                <tr>
+                                    <td>Giỏi</td>
+                                    <td>50+ WPM</td>
+                                    <td>97%+</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

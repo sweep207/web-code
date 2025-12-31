@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài học - CodeType</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">CodeType</span>
+            </div>
+            <nav class="nav" id="nav-menu">
+                <a href="index.html" class="nav-link" onclick="closeMenu()">Trang chủ</a>
+                <a href="practice.html" class="nav-link" onclick="closeMenu()">Luyện tập</a>
+                <a href="lessons.html" class="nav-link active" onclick="closeMenu()">Bài học</a>
+                <a href="docs.html" class="nav-link" onclick="closeMenu()">Docs</a>
+                <a href="about.html" class="nav-link" onclick="closeMenu()">Giới thiệu</a>
+            </nav>
+            <div class="header-actions">
+                <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="Tắt âm thanh">
+                    <svg class="icon-sound-on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-sound-off" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Chuyển đổi giao diện">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            <div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+        </header>
+
+        <!-- Lessons Section -->
+        <section id="lessons" class="lessons-section">
+            <h2 class="section-title">Bài học lập trình</h2>
+            <p class="section-subtitle">Chọn bài học phù hợp với trình độ của bạn</p>
+
+            <div class="lessons-grid">
+                <div class="lesson-card" onclick="selectLesson('js-basics')">
+                    <div class="lesson-icon">📘</div>
+                    <h3>JavaScript cơ bản</h3>
+                    <p>Biến, hàm, vòng lặp và điều kiện</p>
+                    <span class="lesson-level beginner">Cơ bản</span>
+                </div>
+                <div class="lesson-card" onclick="selectLesson('python-basics')">
+                    <div class="lesson-icon">🐍</div>
+                    <h3>Python cơ bản</h3>
+                    <p>Syntax Python và các cấu trúc dữ liệu</p>
+                    <span class="lesson-level beginner">Cơ bản</span>
+                </div>
+                <div class="lesson-card" onclick="selectLesson('html-css')">
+                    <div class="lesson-icon">🎨</div>
+                    <h3>HTML & CSS</h3>
+                    <p>Xây dựng giao diện web đẹp mắt</p>
+                    <span class="lesson-level beginner">Cơ bản</span>
+                </div>
+                <div class="lesson-card" onclick="selectLesson('js-advanced')">
+                    <div class="lesson-icon">⚡</div>
+                    <h3>JavaScript nâng cao</h3>
+                    <p>Async/await, Promises, ES6+</p>
+                    <span class="lesson-level intermediate">Trung bình</span>
+                </div>
+                <div class="lesson-card" onclick="selectLesson('react')">
+                    <div class="lesson-icon">⚛️</div>
+                    <h3>React.js</h3>
+                    <p>Components, Hooks, State management</p>
+                    <span class="lesson-level intermediate">Trung bình</span>
+                </div>
+                <div class="lesson-card" onclick="selectLesson('algorithms')">
+                    <div class="lesson-icon">🧮</div>
+                    <h3>Thuật toán</h3>
+                    <p>Sắp xếp, tìm kiếm, đệ quy</p>
+                    <span class="lesson-level advanced">Nâng cao</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&lt;/&gt;</span>
+                    <span>CodeType</span>
+                </div>
+                <p>Web được tạo ra để học tập - Dev By <strong>DangVu</strong></p>
+                <p class="footer-copyright">&copy; 2025 CodeType - Học code mỗi ngày</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
