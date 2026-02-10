@@ -1,4 +1,4 @@
-# CodeType - Học Code với Hiệu Ứng Gõ Chữ
+# SWEEP 🚀 - Học Code với Hiệu Ứng Gõ Chữ
 
 ## 📖 Giới thiệu
 
